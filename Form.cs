@@ -140,7 +140,7 @@ namespace 磁贴辅助小工具
         /// </summary>
         private void Read_Config()
         {
-            string ConfigPath = DesktopPath + Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".ini";
+            string ConfigPath = Path.GetDirectoryName(Application.ExecutablePath) + @"\" + Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".ini";
             if (File.Exists(ConfigPath))
             {
                 Run(IniHelper_cs.IniHelper.GetValue("Config", "Type", "", ConfigPath), IniHelper_cs.IniHelper.GetValue("Config", "Path", "", ConfigPath), IniHelper_cs.IniHelper.GetValue("Config", "Command", "", ConfigPath));
