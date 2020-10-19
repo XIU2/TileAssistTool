@@ -176,7 +176,15 @@ namespace 磁贴辅助小工具
                 switch (Type)
                 {
                     case "exe":
-                        _ = Process.Start(Path, Command);
+                        ProcessStartInfo exeRun = new ProcessStartInfo();
+                        exeRun.FileName = Path;
+                        exeRun.Arguments = Command;
+                        if (System.IO.Path.GetFileNameWithoutExtension(Path) == "schtasks")
+                        {
+                            exeRun.CreateNoWindow = true;
+                            exeRun.UseShellExecute = false;
+                        }
+                        _ = Process.Start(exeRun);
                         break;
                     case "lnk.uwp":
                     case "url":
