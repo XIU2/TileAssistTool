@@ -125,7 +125,7 @@ namespace 磁贴辅助小工具
                 {
                     File.Copy(UWPLnkPath, DesktopPath + FileName + ".lnk"); // 如果不是，则复制一份到桌面
                 }
-                _ = MessageBox.Show("因为 [UWP快捷方式] 无法获取目标路径，所以必须保留该 UWP快捷方式" + Environment.NewLine + "快捷方式可以移动，但必须和对应的 .exe/.ini 文件放在一起！", "注意：", MessageBoxButtons.OK);
+                _ = MessageBox.Show("因为 UWP 等特殊快捷方式无法获取目标路径，所以必须保留该快捷方式文件" + Environment.NewLine + "快捷方式文件可以移动，但必须和对应的 [.exe .ini] 文件放在一起！", "注意：", MessageBoxButtons.OK);
             }
             // 移动自身到桌面并重命名
             File.Copy(Application.ExecutablePath, DesktopPath + FileName + ".exe");

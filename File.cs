@@ -23,8 +23,6 @@ namespace File_cs
                 Temp[1] = Shortcut.Arguments;
                 Temp[2] = Shortcut.WorkingDirectory;
                 Temp[3] = Shortcut.IconLocation;
-                Temp[4] = Shortcut.Description;
-                Temp[5] = Shortcut.TargetPath;
                 Shortcut.Save();
                 return Temp;
             }
